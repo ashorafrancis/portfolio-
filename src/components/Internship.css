@@ -1,0 +1,226 @@
+/* ── INTERNSHIP SECTION — 24px Rounded Glass Card with Purple Glow ── */
+.internship-section {
+  position: relative;
+  background: var(--bg-darker);
+}
+
+/* Main Card */
+.internship-main-card {
+  padding: 2.8rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(217, 70, 239, 0.25);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(168, 85, 247, 0.15);
+}
+
+/* Card Header */
+.internship-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 0;
+}
+
+@media (min-width: 900px) {
+  .internship-card-header {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+.company-block {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.company-logo-badge {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-md);
+  background: var(--gradient-primary);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 6px 20px rgba(217, 70, 239, 0.4);
+}
+
+.company-name {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-white);
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  margin-bottom: 0.3rem;
+}
+
+.company-role-note {
+  font-size: 0.9rem;
+  color: var(--accent-magenta);
+  font-weight: 700;
+}
+
+/* Meta Badges */
+.internship-meta-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  align-items: flex-start;
+}
+
+@media (min-width: 900px) {
+  .internship-meta-badges { align-items: flex-end; }
+}
+
+.meta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-pill);
+  background: rgba(168, 85, 247, 0.08);
+  border: 1px solid rgba(217, 70, 239, 0.2);
+  font-size: 0.84rem;
+  color: var(--text-main);
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+
+.meta-badge svg { color: var(--accent-magenta); flex-shrink: 0; }
+
+/* Divider */
+.internship-divider {
+  height: 1px;
+  background: rgba(217, 70, 239, 0.15);
+  margin: 2.25rem 0;
+}
+
+/* Content Grid */
+.internship-content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 900px) {
+  .internship-content-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+.internship-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.col-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--text-white);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid rgba(217, 70, 239, 0.15);
+}
+
+.col-icon { color: var(--accent-magenta); }
+.col-icon-amber { color: var(--accent-orange); }
+
+/* Responsibilities List */
+.responsibility-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.responsibility-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.resp-check { color: var(--accent-magenta); flex-shrink: 0; margin-top: 3px; }
+
+/* Tools Badges */
+.internship-tools-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.internship-tool-badge {
+  font-size: 0.8rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(217, 70, 239, 0.2);
+  color: var(--text-main);
+  font-family: var(--font-mono);
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.internship-tool-badge:hover {
+  border-color: var(--accent-magenta);
+  color: var(--text-white);
+  background: rgba(217, 70, 239, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Special Project Card */
+.special-project-card {
+  padding: 1.35rem;
+  border-radius: var(--radius-lg);
+  background: rgba(249, 115, 22, 0.06);
+  border: 1px solid rgba(249, 115, 22, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  box-shadow: 0 4px 20px rgba(249, 115, 22, 0.1);
+}
+
+.sp-top-tag {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--accent-orange);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.15rem;
+}
+
+.sp-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-white);
+  line-height: 1.2;
+}
+
+.sp-stack {
+  font-size: 0.82rem;
+  color: var(--accent-magenta);
+  font-family: var(--font-mono);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.sp-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.sp-link-hint {
+  color: var(--accent-orange);
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .internship-main-card { padding: 1.6rem; }
+}
