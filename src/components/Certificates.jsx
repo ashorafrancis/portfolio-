@@ -86,7 +86,7 @@ export default function Certificates() {
               </p>
 
               <div className="cert-footer-line">
-                <ShieldCheck size={16} className="text-cyan" />
+                <ShieldCheck size={16} className="text-skyblue" />
                 <span>Verified Resume Coursework</span>
               </div>
 

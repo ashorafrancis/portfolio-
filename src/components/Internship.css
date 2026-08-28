@@ -8,8 +8,8 @@
 .internship-main-card {
   padding: 2.8rem;
   border-radius: var(--radius-xl);
-  border: 1px solid rgba(217, 70, 239, 0.25);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(37, 99, 235, 0.15);
 }
 
 /* Card Header */
@@ -44,7 +44,7 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 6px 20px rgba(217, 70, 239, 0.4);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
 }
 
 .company-name {
@@ -58,7 +58,7 @@
 
 .company-role-note {
   font-size: 0.9rem;
-  color: var(--accent-magenta);
+  color: var(--accent-blue);
   font-weight: 700;
 }
 
@@ -80,20 +80,20 @@
   gap: 0.55rem;
   padding: 0.4rem 1rem;
   border-radius: var(--radius-pill);
-  background: rgba(168, 85, 247, 0.08);
-  border: 1px solid rgba(217, 70, 239, 0.2);
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.2);
   font-size: 0.84rem;
   color: var(--text-main);
   font-family: var(--font-mono);
   font-weight: 600;
 }
 
-.meta-badge svg { color: var(--accent-magenta); flex-shrink: 0; }
+.meta-badge svg { color: var(--accent-blue); flex-shrink: 0; }
 
 /* Divider */
 .internship-divider {
   height: 1px;
-  background: rgba(217, 70, 239, 0.15);
+  background: rgba(59, 130, 246, 0.15);
   margin: 2.25rem 0;
 }
 
@@ -124,11 +124,11 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   padding-bottom: 0.65rem;
-  border-bottom: 1px solid rgba(217, 70, 239, 0.15);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.15);
 }
 
-.col-icon { color: var(--accent-magenta); }
-.col-icon-amber { color: var(--accent-orange); }
+.col-icon { color: var(--accent-blue); }
+.col-icon-lightgrey { color: var(--accent-slate); }
 
 /* Responsibilities List */
 .responsibility-list {
@@ -146,7 +146,7 @@
   color: var(--text-muted);
 }
 
-.resp-check { color: var(--accent-magenta); flex-shrink: 0; margin-top: 3px; }
+.resp-check { color: var(--accent-blue); flex-shrink: 0; margin-top: 3px; }
 
 /* Tools Badges */
 .internship-tools-grid {
@@ -160,7 +160,7 @@
   padding: 0.35rem 0.85rem;
   border-radius: var(--radius-pill);
   background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(217, 70, 239, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.2);
   color: var(--text-main);
   font-family: var(--font-mono);
   font-weight: 600;
@@ -168,9 +168,9 @@
 }
 
 .internship-tool-badge:hover {
-  border-color: var(--accent-magenta);
+  border-color: var(--accent-blue);
   color: var(--text-white);
-  background: rgba(217, 70, 239, 0.15);
+  background: rgba(59, 130, 246, 0.15);
   transform: translateY(-2px);
 }
 
@@ -178,18 +178,18 @@
 .special-project-card {
   padding: 1.35rem;
   border-radius: var(--radius-lg);
-  background: rgba(249, 115, 22, 0.06);
-  border: 1px solid rgba(249, 115, 22, 0.25);
+  background: rgba(71, 85, 105, 0.06);
+  border: 1px solid rgba(71, 85, 105, 0.25);
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
-  box-shadow: 0 4px 20px rgba(249, 115, 22, 0.1);
+  box-shadow: 0 4px 20px rgba(71, 85, 105, 0.1);
 }
 
 .sp-top-tag {
   font-size: 0.7rem;
   font-weight: 800;
-  color: var(--accent-orange);
+  color: var(--accent-slate);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-bottom: 0.15rem;
@@ -204,7 +204,7 @@
 
 .sp-stack {
   font-size: 0.82rem;
-  color: var(--accent-magenta);
+  color: var(--accent-blue);
   font-family: var(--font-mono);
   font-weight: 600;
   margin-bottom: 0.35rem;
@@ -217,7 +217,7 @@
 }
 
 .sp-link-hint {
-  color: var(--accent-orange);
+  color: var(--accent-slate);
   font-weight: 700;
 }
 

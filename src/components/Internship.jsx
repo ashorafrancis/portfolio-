@@ -3,16 +3,16 @@ import { Building2, Calendar, Clock, ClipboardList, Wrench, Star, CheckCircle2 }
 import './Internship.css';
 
 const responsibilities = [
-  'Android Application Development',
-  'UI/UX Design',
-  'IoT Device Testing',
-  'Firmware-related tasks',
-  'Technical documentation'
+  'Assisted in the design and development of Android application features, contributing to core functionality and user interface improvements.',
+  'Performed debugging and testing of application code to identify and resolve issues, improving overall software reliability.',
+  'Participated in software and device testing cycles to ensure functionality met quality standards.',
+  'Contributed to technical documentation and supported ongoing development activities within a collaborative team environment.',
+  'Worked with industry-standard development tools and version-control platforms in a professional setting.',
+  'Strengthened problem-solving, communication, analytical, and teamwork skills through real-world project involvement.'
 ];
 
 const toolsList = [
-  'Flutter', 'Dart', 'Android Studio', 'VS Code',
-  'GitHub', 'Microsoft Word', 'Microsoft Excel', 'Arduino IDE'
+  'Android Studio', 'VS Code', 'Git', 'GitHub', 'Android Development'
 ];
 
 export default function Internship() {
@@ -45,18 +45,14 @@ export default function Internship() {
               </div>
               <div>
                 <h3 className="company-name">TEQARD LABS PRIVATE LIMITED</h3>
-                <p className="company-role-note">Internship — Application Development & IoT</p>
+                <p className="company-role-note">Software Development Intern</p>
               </div>
             </div>
 
             <div className="internship-meta-badges">
               <div className="meta-badge">
                 <Calendar size={14} />
-                <span>06 April 2026 – 29 May 2026</span>
-              </div>
-              <div className="meta-badge">
-                <Clock size={14} />
-                <span>240 Hours · Mon–Fri · 10:00 AM – 5:00 PM</span>
+                <span>Apr 2026 – May 2026</span>
               </div>
             </div>
           </div>
@@ -99,7 +95,7 @@ export default function Internship() {
             {/* Special Project */}
             <div className="internship-col">
               <h4 className="col-heading">
-                <Star size={16} className="col-icon col-icon-amber" />
+                <Star size={16} className="col-icon col-icon-lightgrey" />
                 <span>Special Project</span>
               </h4>
               <div className="special-project-card">

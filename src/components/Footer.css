@@ -1,7 +1,7 @@
 /* ── FOOTER — Dark Violet with Vibrant Purple Ambient Links ── */
 .footer-container {
   background: #06040b;
-  border-top: 1px solid rgba(217, 70, 239, 0.15);
+  border-top: 1px solid rgba(59, 130, 246, 0.15);
   padding: 4.5rem 0 2.5rem 0;
   position: relative;
   z-index: 10;
@@ -12,7 +12,7 @@
   grid-template-columns: 1fr;
   gap: 2.5rem;
   padding-bottom: 2.5rem;
-  border-bottom: 1px solid rgba(217, 70, 239, 0.15);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.15);
 }
 
 @media (min-width: 900px) {
@@ -63,7 +63,7 @@
 }
 
 .footer-link:hover {
-  color: var(--accent-magenta);
+  color: var(--accent-blue);
   padding-left: 3px;
 }
 
@@ -79,7 +79,7 @@
   width: 42px; height: 42px;
   border-radius: var(--radius-pill);
   background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(217, 70, 239, 0.25);
+  border: 1px solid rgba(59, 130, 246, 0.25);
   color: var(--text-muted);
   display: flex;
   align-items: center;
@@ -92,7 +92,7 @@
   border-color: transparent;
   color: #ffffff;
   transform: translateY(-3px);
-  box-shadow: 0 4px 18px rgba(217, 70, 239, 0.4);
+  box-shadow: 0 4px 18px rgba(59, 130, 246, 0.4);
 }
 
 .back-to-top-btn {
@@ -102,7 +102,7 @@
   padding: 0.45rem 1rem;
   border-radius: var(--radius-pill);
   background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(217, 70, 239, 0.25);
+  border: 1px solid rgba(59, 130, 246, 0.25);
   color: var(--text-muted);
   font-size: 0.82rem;
   font-weight: 700;
@@ -112,8 +112,8 @@
 
 .back-to-top-btn:hover {
   color: #ffffff;
-  border-color: var(--accent-magenta);
-  background: rgba(217, 70, 239, 0.15);
+  border-color: var(--accent-blue);
+  background: rgba(59, 130, 246, 0.15);
 }
 
 .footer-bottom-bar {
@@ -135,5 +135,5 @@
 .footer-build-tag {
   font-family: var(--font-mono);
   font-size: 0.74rem;
-  color: var(--accent-magenta);
+  color: var(--accent-blue);
 }

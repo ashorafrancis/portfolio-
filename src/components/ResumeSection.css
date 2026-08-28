@@ -7,8 +7,8 @@
 .resume-card {
   padding: 3rem;
   border-radius: var(--radius-xl);
-  border: 1px solid rgba(217, 70, 239, 0.25);
-  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.7), 0 0 35px rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.7), 0 0 35px rgba(37, 99, 235, 0.15);
   position: relative;
   overflow: hidden;
 }
@@ -17,7 +17,7 @@
   position: absolute;
   top: -80px; right: -80px;
   width: 350px; height: 350px;
-  background: radial-gradient(circle, rgba(217, 70, 239, 0.18) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.18) 0%, transparent 65%);
   pointer-events: none;
 }
 
@@ -62,7 +62,7 @@
   color: var(--text-white);
 }
 
-.resume-point svg { color: var(--accent-magenta) !important; }
+.resume-point svg { color: var(--accent-blue) !important; }
 
 .resume-actions-group {
   display: flex;
@@ -76,10 +76,10 @@
 .resume-doc-sheet {
   position: relative;
   width: 100%;
-  max-width: 330px;
+  max-width: min(100%, 330px);
   background: rgba(14, 10, 28, 0.95);
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(217, 70, 239, 0.3);
+  border: 1px solid rgba(59, 130, 246, 0.3);
   padding: 1.5rem;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7);
   overflow: hidden;
@@ -88,18 +88,18 @@
 
 .resume-doc-sheet:hover {
   transform: translateY(-4px);
-  border-color: var(--accent-magenta);
-  box-shadow: 0 16px 40px rgba(217, 70, 239, 0.25);
+  border-color: var(--accent-blue);
+  box-shadow: 0 16px 40px rgba(59, 130, 246, 0.25);
 }
 
 .sheet-header {
-  border-bottom: 1px solid rgba(217, 70, 239, 0.2);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.2);
   padding-bottom: 0.85rem;
   margin-bottom: 0.95rem;
 }
 
 .sheet-name  { font-weight: 800; font-size: 1.1rem; color: var(--text-white); }
-.sheet-subtitle { font-size: 0.8rem; color: var(--accent-magenta); font-weight: 700; }
+.sheet-subtitle { font-size: 0.8rem; color: var(--accent-blue); font-weight: 700; }
 .sheet-contact  { font-size: 0.72rem; color: var(--text-muted); margin-top: 3px; }
 
 .sheet-section { margin-bottom: 0.85rem; }
@@ -107,7 +107,7 @@
 .sheet-sec-title {
   font-size: 0.68rem;
   font-weight: 800;
-  color: var(--accent-magenta);
+  color: var(--accent-blue);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 3px;
@@ -122,12 +122,12 @@
   gap: 0.5rem;
   margin-top: 1.35rem;
   padding-top: 0.85rem;
-  border-top: 1px dashed rgba(217, 70, 239, 0.2);
+  border-top: 1px dashed rgba(59, 130, 246, 0.2);
   font-size: 0.75rem;
   color: var(--text-muted);
 }
 
-.sheet-watermark svg { color: var(--accent-magenta) !important; }
+.sheet-watermark svg { color: var(--accent-blue) !important; }
 
 .sheet-overlay-btn {
   position: absolute;
@@ -148,7 +148,9 @@
 .resume-doc-sheet:hover .sheet-overlay-btn { opacity: 1; }
 
 @media (max-width: 600px) {
-  .resume-card { padding: 1.6rem; }
+  .resume-card { padding: 1.25rem; }
   .resume-highlights-grid { grid-template-columns: 1fr; }
-  .resume-actions-group { flex-direction: column; }
+  .resume-actions-group { flex-direction: column; width: 100%; }
+  .resume-actions-group .btn { width: 100%; justify-content: center; }
+  .resume-main-title { font-size: 2rem; }
 }

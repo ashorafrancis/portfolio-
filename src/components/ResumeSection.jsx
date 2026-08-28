@@ -26,24 +26,24 @@ export default function ResumeSection() {
               </h2>
 
               <p className="resume-description">
-                Interested in learning more about my background? Download or view my full official resume detailing my BCA academic coursework, CGPA (8.36), technical skill set, certifications, software projects, research paper presentation, and leadership activities.
+                Interested in learning more about my background? Download or view my full official resume detailing my BCA academic coursework, technical skill set, certifications, software projects, research paper presentation, and leadership activities.
               </p>
 
               <div className="resume-highlights-grid">
                 <div className="resume-point">
-                  <CheckCircle2 size={16} className="text-cyan" />
-                  <span>BCA Degree Track (2024 - 2028)</span>
+                  <CheckCircle2 size={16} className="text-skyblue" />
+                  <span>BCA Degree Track (Expected 2027)</span>
                 </div>
                 <div className="resume-point">
-                  <CheckCircle2 size={16} className="text-cyan" />
-                  <span>Python, Java, Flutter & Node.js</span>
+                  <CheckCircle2 size={16} className="text-skyblue" />
+                  <span>Python, Dart, Flutter & Node.js</span>
                 </div>
                 <div className="resume-point">
-                  <CheckCircle2 size={16} className="text-cyan" />
-                  <span>5 Industry Certifications</span>
+                  <CheckCircle2 size={16} className="text-skyblue" />
+                  <span>4 Industry Certifications</span>
                 </div>
                 <div className="resume-point">
-                  <CheckCircle2 size={16} className="text-cyan" />
+                  <CheckCircle2 size={16} className="text-skyblue" />
                   <span>3 Practical Software Projects</span>
                 </div>
               </div>
@@ -82,17 +82,17 @@ export default function ResumeSection() {
 
                 <div className="sheet-section">
                   <div className="sheet-sec-title">EDUCATION</div>
-                  <div className="sheet-line">Bachelor of Computer Applications (BCA) - CGPA 8.36</div>
+                  <div className="sheet-line">Bachelor of Computer Applications (BCA) - Expected 2027</div>
                   <div className="sheet-subline">De Paul Institute of Science & Technology</div>
                 </div>
 
                 <div className="sheet-section">
                   <div className="sheet-sec-title">TECHNICAL SKILLS</div>
-                  <div className="sheet-line">Python, Java, C/C++, Flutter, Node.js, MongoDB, MySQL</div>
+                  <div className="sheet-line">Python, Dart, Flutter, Node.js, MongoDB, Power BI</div>
                 </div>
 
                 <div className="sheet-watermark">
-                  <ShieldCheck size={28} className="text-cyan" />
+                  <ShieldCheck size={28} className="text-skyblue" />
                   <span>Verified PDF Document</span>
                 </div>
 

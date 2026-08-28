@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
-import { Briefcase, Star, Layers, ShieldCheck, CheckCircle2, Cpu, BarChart3, Database, Server, Smartphone, Calendar, Bell, ChevronRight } from 'lucide-react';
+import { Briefcase, Star, Layers, ShieldCheck, CheckCircle2, Cpu, BarChart3, Database, Server, Smartphone, Calendar, Bell, ChevronRight, Play, X, Maximize } from 'lucide-react';
 import './Projects.css';
 
 export default function Projects() {
   const [activeTab, setActiveTab] = useState('overview'); // 'overview' | 'architecture' | 'features'
+  const [modal, setModal] = useState({ isOpen: false, type: '', src: '' });
+
+  const openVideo = (src) => setModal({ isOpen: true, type: 'video', src });
+  const openImage = (src) => setModal({ isOpen: true, type: 'image', src });
+  const closeModal = () => setModal({ isOpen: false, type: '', src: '' });
 
   return (
     <section id="projects" className="section-padding projects-section">
@@ -32,7 +37,7 @@ export default function Projects() {
             <span>Featured Project — Full Stack Mobile App</span>
           </div>
 
-          <div className="featured-grid">
+          <div className="featured-grid" style={{ gridTemplateColumns: '1fr' }}>
             
             {/* Left Content */}
             <div className="featured-info">
@@ -41,6 +46,10 @@ export default function Projects() {
               <p className="featured-description">
                 A full-stack expense management application designed to help users record, organize, analyze, and manage their personal finances, recurring expenses, and dues in one place.
               </p>
+
+              <button className="btn-watch-demo" onClick={() => openVideo('/expense-tracker.mp4')}>
+                <Play size={18} fill="currentColor" /> Watch Demo
+              </button>
 
               {/* Technologies Badges */}
               <div className="tech-badge-list">
@@ -93,19 +102,19 @@ export default function Projects() {
                   <div className="architecture-panel animate-fade-in">
                     <div className="arch-flow-grid">
                       <div className="arch-box">
-                        <Smartphone size={18} className="text-cyan" />
+                        <Smartphone size={18} className="text-skyblue" />
                         <span className="arch-box-title">Frontend</span>
                         <span className="arch-box-desc">Flutter & Dart UI</span>
                       </div>
                       <div className="arch-arrow">➔</div>
                       <div className="arch-box">
-                        <Server size={18} className="text-indigo" />
+                        <Server size={18} className="text-deepblue" />
                         <span className="arch-box-title">Backend API</span>
                         <span className="arch-box-desc">Node.js & Express</span>
                       </div>
                       <div className="arch-arrow">➔</div>
                       <div className="arch-box">
-                        <Database size={18} className="text-emerald" />
+                        <Database size={18} className="text-darkgrey" />
                         <span className="arch-box-title">Database</span>
                         <span className="arch-box-desc">MongoDB Storage</span>
                       </div>
@@ -129,63 +138,6 @@ export default function Projects() {
 
             </div>
 
-            {/* Right Preview Card */}
-            <div className="featured-preview-area">
-              <div className="mockup-container">
-                <div className="mockup-header">
-                  <span className="mockup-dot red"></span>
-                  <span className="mockup-dot yellow"></span>
-                  <span className="mockup-dot green"></span>
-                  <span className="mockup-title">Expense Tracker Dashboard</span>
-                </div>
-                <div className="mockup-screen">
-                  
-                  {/* Visual Dashboard Mock */}
-                  <div className="app-mock-body">
-                    <div className="mock-card mock-balance">
-                      <span className="mock-lbl">Total Monthly Expense</span>
-                      <span className="mock-val">₹ 14,250.00</span>
-                      <div className="mock-trend">↓ 12% vs last month</div>
-                    </div>
-
-                    <div className="mock-stats-row">
-                      <div className="mock-mini-card">
-                        <span className="mock-lbl">Active Dues</span>
-                        <span className="mock-val-sm text-amber">2 Pending</span>
-                      </div>
-                      <div className="mock-mini-card">
-                        <span className="mock-lbl">Categories</span>
-                        <span className="mock-val-sm text-cyan">6 Active</span>
-                      </div>
-                    </div>
-
-                    <div className="mock-chart-box">
-                      <div className="mock-lbl">Analytics Preview</div>
-                      <div className="chart-bars">
-                        <div className="bar bar-1" style={{ height: '60%' }}></div>
-                        <div className="bar bar-2" style={{ height: '85%' }}></div>
-                        <div className="bar bar-3" style={{ height: '40%' }}></div>
-                        <div className="bar bar-4" style={{ height: '70%' }}></div>
-                        <div className="bar bar-5" style={{ height: '90%' }}></div>
-                      </div>
-                    </div>
-
-                    <div className="mock-recent-list">
-                      <div className="mock-item">
-                        <span className="mock-item-title">Course Registration</span>
-                        <span className="mock-item-amt">- ₹ 2,500</span>
-                      </div>
-                      <div className="mock-item">
-                        <span className="mock-item-title">Books & Stationery</span>
-                        <span className="mock-item-amt">- ₹ 850</span>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
 
@@ -196,7 +148,7 @@ export default function Projects() {
           
           {/* PROJECT 2: TO-DO APP */}
           <div className="glass-card project-card">
-            <div className="card-top-icon icon-cyan">
+            <div className="card-top-icon icon-skyblue">
               <Smartphone size={24} />
             </div>
 
@@ -207,6 +159,10 @@ export default function Projects() {
               <p className="project-card-desc">
                 A mobile task management application developed using Flutter and Dart to help users organize, schedule, and complete their daily tasks efficiently.
               </p>
+
+              <button className="btn-watch-demo secondary" onClick={() => openVideo('/todo-app.mp4')}>
+                <Play size={16} fill="currentColor" /> Watch Demo
+              </button>
 
               <div className="tech-badge-list">
                 <span className="tech-pill pill-flutter">Flutter</span>
@@ -226,73 +182,44 @@ export default function Projects() {
                 </ul>
               </div>
 
-              {/* Visual Tech Representation */}
-              <div className="card-visual-preview">
-                <div className="todo-mock-list">
-                  <div className="todo-mock-item checked">
-                    <span className="todo-checkbox">✓</span>
-                    <span>Complete Data Analytics Assignment</span>
-                  </div>
-                  <div className="todo-mock-item">
-                    <span className="todo-checkbox"></span>
-                    <span>Review Linear Regression notebook</span>
-                  </div>
-                  <div className="todo-mock-item">
-                    <span className="todo-checkbox"></span>
-                    <span>Update Flutter app UI widgets</span>
-                  </div>
-                </div>
-              </div>
-
             </div>
           </div>
 
-          {/* PROJECT 3: HOUSE PRICE PREDICTION */}
+          {/* PROJECT 4: FORBES DASHBOARD */}
           <div className="glass-card project-card">
-            <div className="card-top-icon icon-amber">
-              <Cpu size={24} />
+            <div className="card-top-icon icon-darkgrey">
+              <BarChart3 size={24} />
             </div>
 
             <div className="card-content">
-              <span className="project-category-tag">Machine Learning</span>
-              <h3 className="project-card-title">House Price Prediction using Linear Regression</h3>
+              <span className="project-category-tag">Data Visualization</span>
+              <h3 className="project-card-title">Forbes Data Visualization Dashboard</h3>
               
               <p className="project-card-desc">
-                A machine learning project built in Python that predicts housing prices using supervised Linear Regression algorithms and data analytics pipelines.
+                Created an interactive data visualization dashboard using Power BI to analyze the Forbes dataset. The dashboard provides insights into billionaire data, industries, countries, wealth distribution, and other important trends using interactive charts, KPIs, and filters.
               </p>
 
               <div className="tech-badge-list">
-                <span className="tech-pill pill-python">Python</span>
-                <span className="tech-pill">Pandas</span>
-                <span className="tech-pill">NumPy</span>
-                <span className="tech-pill">Matplotlib</span>
-                <span className="tech-pill pill-sklearn">scikit-learn</span>
+                <span className="tech-pill">Power BI</span>
+                <span className="tech-pill">Data Visualization</span>
+                <span className="tech-pill">Data Analysis</span>
+                <span className="tech-pill">Data Cleaning</span>
               </div>
 
               <div className="project-features-box">
-                <h4 className="box-heading">Technical Implementation:</h4>
+                <h4 className="box-heading">Key Features:</h4>
                 <ul className="card-feature-list">
-                  <li><CheckCircle2 size={14} className="check-icon" /> Cleaned, transformed, and analyzed dataset features using Pandas & NumPy</li>
-                  <li><CheckCircle2 size={14} className="check-icon" /> Trained Linear Regression model via scikit-learn to generate price predictions</li>
-                  <li><CheckCircle2 size={14} className="check-icon" /> Visualized actual vs predicted price distributions using Matplotlib scatter plots</li>
+                  <li><CheckCircle2 size={14} className="check-icon" /> Interactive data visualization dashboard for Forbes dataset</li>
+                  <li><CheckCircle2 size={14} className="check-icon" /> Dynamic KPIs and filters for in-depth analysis</li>
+                  <li><CheckCircle2 size={14} className="check-icon" /> Analyzed wealth distribution, industries, and countries</li>
                 </ul>
               </div>
 
-              {/* Visual ML Chart Mockup */}
-              <div className="card-visual-preview">
-                <div className="ml-visual-box">
-                  <div className="ml-header">
-                    <BarChart3 size={14} className="text-amber" />
-                    <span>Linear Regression Model Plot</span>
-                  </div>
-                  <div className="scatter-plot-mock">
-                    <div className="dot dot-1" style={{ bottom: '20%', left: '15%' }}></div>
-                    <div className="dot dot-2" style={{ bottom: '35%', left: '30%' }}></div>
-                    <div className="dot dot-3" style={{ bottom: '50%', left: '48%' }}></div>
-                    <div className="dot dot-4" style={{ bottom: '70%', left: '65%' }}></div>
-                    <div className="dot dot-5" style={{ bottom: '85%', left: '80%' }}></div>
-                    <div className="regression-line"></div>
-                  </div>
+              {/* Visual Preview */}
+              <div className="card-visual-preview no-padding clickable" onClick={() => openImage('/forbes-dashboard-preview.png')}>
+                <img src="/forbes-dashboard-preview.png" alt="Forbes Data Visualization Dashboard" className="project-screenshot" />
+                <div className="preview-overlay">
+                  <Maximize size={32} />
                 </div>
               </div>
 
@@ -300,6 +227,28 @@ export default function Projects() {
           </div>
 
         </div>
+
+        {/* Media Modal */}
+        {modal.isOpen && (
+          <div className="media-modal-overlay" onClick={closeModal}>
+            <div className="media-modal-content" onClick={(e) => e.stopPropagation()}>
+              <button className="modal-close-btn" onClick={closeModal}>
+                <X size={20} />
+              </button>
+              
+              {modal.type === 'video' ? (
+                <video 
+                  src={modal.src} 
+                  controls 
+                  className="modal-video"
+                  controlsList="nodownload"
+                />
+              ) : (
+                <img src={modal.src} alt="Preview Modal" className="modal-image" />
+              )}
+            </div>
+          </div>
+        )}
 
       </div>
     </section>

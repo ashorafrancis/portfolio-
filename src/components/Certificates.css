@@ -38,11 +38,11 @@
   gap: 0.45rem;
   font-size: 0.74rem;
   font-weight: 700;
-  color: var(--accent-magenta);
-  background: rgba(217, 70, 239, 0.1);
+  color: var(--accent-blue);
+  background: rgba(59, 130, 246, 0.1);
   padding: 0.3rem 0.75rem;
   border-radius: var(--radius-pill);
-  border: 1px solid rgba(217, 70, 239, 0.25);
+  border: 1px solid rgba(59, 130, 246, 0.25);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -58,9 +58,9 @@
 }
 
 .status-completed {
-  background: rgba(16, 185, 129, 0.12);
-  color: #10b981;
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  background: rgba(51, 65, 85, 0.12);
+  color: #334155;
+  border: 1px solid rgba(51, 65, 85, 0.3);
 }
 
 .cert-card-title {
@@ -80,7 +80,7 @@
 }
 
 .cert-issuer {
-  color: var(--accent-magenta);
+  color: var(--accent-blue);
   font-weight: 700;
 }
 
@@ -95,7 +95,7 @@
   content: '•';
   position: absolute;
   left: 0;
-  color: var(--accent-purple);
+  color: var(--accent-darkblue);
 }
 
 .cert-highlights-text {
@@ -116,4 +116,4 @@
   color: var(--text-dim);
 }
 
-.cert-footer-line svg { color: var(--accent-magenta); }
+.cert-footer-line svg { color: var(--accent-blue); }

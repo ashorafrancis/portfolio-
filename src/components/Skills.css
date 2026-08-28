@@ -45,11 +45,11 @@
   color: #ffffff;
 }
 
-.icon-cyan    { background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%); box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3); }
-.icon-indigo  { background: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%); box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3); }
-.icon-emerald { background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%); box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3); }
-.icon-amber   { background: linear-gradient(135deg, #f97316 0%, #fbbf24 100%); box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3); }
-.icon-purple  { background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%); box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3); }
+.icon-skyblue    { background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%); box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3); }
+.icon-deepblue  { background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%); box-shadow: 0 4px 15px rgba(29, 78, 216, 0.3); }
+.icon-darkgrey { background: linear-gradient(135deg, #334155 0%, #0ea5e9 100%); box-shadow: 0 4px 15px rgba(51, 65, 85, 0.3); }
+.icon-lightgrey   { background: linear-gradient(135deg, #475569 0%, #e2e8f0 100%); box-shadow: 0 4px 15px rgba(71, 85, 105, 0.3); }
+.icon-purple  { background: linear-gradient(135deg, #2563eb 0%, #94a3b8 100%); box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3); }
 
 .category-title {
   font-size: 1rem;
@@ -63,14 +63,14 @@
 .category-badge {
   display: inline-block;
   font-size: 0.7rem;
-  color: var(--accent-orange);
-  background: rgba(249, 115, 22, 0.1);
+  color: var(--accent-slate);
+  background: rgba(71, 85, 105, 0.1);
   padding: 0.15rem 0.55rem;
   border-radius: var(--radius-pill);
   margin-top: 0.35rem;
   font-weight: 700;
   letter-spacing: 0.03em;
-  border: 1px solid rgba(249, 115, 22, 0.25);
+  border: 1px solid rgba(71, 85, 105, 0.25);
 }
 
 /* Disclaimer Notice */
@@ -80,15 +80,15 @@
   gap: 0.5rem;
   padding: 0.6rem 0.85rem;
   border-radius: var(--radius-md);
-  background: rgba(249, 115, 22, 0.06);
-  border: 1px solid rgba(249, 115, 22, 0.2);
+  background: rgba(71, 85, 105, 0.06);
+  border: 1px solid rgba(71, 85, 105, 0.2);
   font-size: 0.78rem;
-  color: var(--accent-orange);
+  color: var(--accent-slate);
   margin-bottom: 1.15rem;
   line-height: 1.45;
 }
 
-.disclaimer-icon { flex-shrink: 0; margin-top: 2px; color: var(--accent-orange); }
+.disclaimer-icon { flex-shrink: 0; margin-top: 2px; color: var(--accent-slate); }
 
 /* Skill Badges */
 .skill-badges-container {
@@ -106,17 +106,17 @@
   padding: 0.45rem 0.85rem;
   border-radius: var(--radius-pill);
   background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(217, 70, 239, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.15);
   transition: all 0.25s ease;
   flex: 1 1 calc(50% - 0.55rem);
   min-width: 120px;
 }
 
 .skill-badge-item:hover {
-  background: rgba(168, 85, 247, 0.12);
-  border-color: var(--accent-magenta);
+  background: rgba(37, 99, 235, 0.12);
+  border-color: var(--accent-blue);
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(217, 70, 239, 0.2);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
 }
 
 .skill-name {
@@ -127,7 +127,7 @@
 
 .skill-tag {
   font-size: 0.68rem;
-  color: var(--accent-magenta);
+  color: var(--accent-blue);
   font-family: var(--font-mono);
   font-weight: 600;
 }

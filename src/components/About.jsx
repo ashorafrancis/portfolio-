@@ -7,7 +7,7 @@ const educationData = [
     degree: 'Bachelor of Computer Applications (BCA)',
     institution: 'De Paul Institute of Science & Technology',
     university: 'Mahatma Gandhi University',
-    duration: '2024 – 2028',
+    duration: 'Expected Graduation: 2027',
     scoreLabel: 'CGPA',
     score: '8.36',
     featured: true,
@@ -83,17 +83,17 @@ export default function About() {
         <div className="about-bio-grid">
           <div className="glass-card about-bio-card">
             <h3 className="bio-card-title">
-              <Sparkles size={20} className="text-cyan" />
+              <Sparkles size={20} className="text-skyblue" />
               <span>Professional Summary</span>
             </h3>
             <p className="bio-text">
-              I am currently pursuing my <strong>Bachelor of Computer Applications (BCA)</strong> at De Paul Institute of Science & Technology (Mahatma Gandhi University), maintaining an academic CGPA of <strong>8.36</strong>. 
+              Motivated Bachelor of Computer Applications (BCA) student with a strong foundation in programming, software development, database management, data visualization, and computer networks. Hands-on experience in mobile application development, software testing, technical documentation, and full-stack project development gained through an internship and academic projects.
             </p>
             <p className="bio-text">
-              My goal is to apply solid programming concepts, continuously enhance my analytical and problem-solving skills, build practical real-world projects, and gain hands-on technical experience in professional IT environments.
+              Skilled in Flutter, Python, and Power BI, with strong analytical, problem-solving, communication, and teamwork abilities, and a genuine interest in continuously learning and applying new technologies.
             </p>
             <div className="location-badge">
-              <MapPin size={16} className="text-cyan" />
+              <MapPin size={16} className="text-skyblue" />
               <span>Based in Ernakulam, Kerala, India</span>
             </div>
           </div>
@@ -101,7 +101,7 @@ export default function About() {
           {/* Quick Focus Card */}
           <div className="glass-card about-focus-card">
             <h3 className="bio-card-title">
-              <BookOpen size={20} className="text-cyan" />
+              <BookOpen size={20} className="text-skyblue" />
               <span>Current Learning & Core Interests</span>
             </h3>
             <div className="focus-list">
@@ -126,7 +126,7 @@ export default function About() {
         {/* Education Section Header */}
         <div className="education-timeline-header">
           <h3 className="timeline-section-title">
-            <GraduationCap size={24} className="text-cyan" />
+            <GraduationCap size={24} className="text-skyblue" />
             <span>Educational Qualifications</span>
           </h3>
         </div>

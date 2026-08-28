@@ -64,7 +64,7 @@ export default function Contact() {
             
             {/* Email Card */}
             <a href="mailto:ashorafrancis@gmail.com" className="glass-card contact-info-card">
-              <div className="info-icon-box icon-cyan">
+              <div className="info-icon-box icon-skyblue">
                 <Mail size={22} />
               </div>
               <div className="info-text-wrap">
@@ -76,7 +76,7 @@ export default function Contact() {
 
             {/* Phone Card */}
             <a href="tel:9539748329" className="glass-card contact-info-card">
-              <div className="info-icon-box icon-emerald">
+              <div className="info-icon-box icon-darkgrey">
                 <Phone size={22} />
               </div>
               <div className="info-text-wrap">
@@ -88,7 +88,7 @@ export default function Contact() {
 
             {/* Location Card */}
             <div className="glass-card contact-info-card">
-              <div className="info-icon-box icon-amber">
+              <div className="info-icon-box icon-lightgrey">
                 <MapPin size={22} />
               </div>
               <div className="info-text-wrap">
@@ -105,7 +105,7 @@ export default function Contact() {
               rel="noopener noreferrer"
               className="glass-card contact-info-card linkedin-card"
             >
-              <div className="info-icon-box icon-indigo">
+              <div className="info-icon-box icon-deepblue">
                 <LinkedinIcon size={22} />
               </div>
               <div className="info-text-wrap">
@@ -120,13 +120,13 @@ export default function Contact() {
           {/* Right: Contact Form */}
           <div className="glass-card contact-form-card">
             <h3 className="form-card-title">
-              <MessageSquare size={20} className="text-cyan" />
+              <MessageSquare size={20} className="text-skyblue" />
               <span>Send Me a Message</span>
             </h3>
 
             {submitted && (
               <div className="form-toast-success animate-fade-in">
-                <CheckCircle2 size={20} className="text-emerald" />
+                <CheckCircle2 size={20} className="text-darkgrey" />
                 <div>
                   <strong>Opening your default email client...</strong>
                   <p>Your message parameters have been prepared. You can review and hit send in your mail client.</p>

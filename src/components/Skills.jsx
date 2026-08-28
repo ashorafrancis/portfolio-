@@ -9,77 +9,59 @@ const skillCategories = [
     icon: Code,
     color: 'cyan',
     skills: [
-      { name: 'Python', tag: 'Primary Focus' },
-      { name: 'Java', tag: 'OOP Core' },
-      { name: 'C', tag: 'Fundamentals' },
-      { name: 'C++', tag: 'Concepts' },
-      { name: 'JavaScript', tag: 'Web Logic' }
+      { name: 'Python', tag: 'Scripting' },
+      { name: 'Dart', tag: 'Mobile' },
+      { name: 'C', tag: 'Core' },
+      { name: 'Java', tag: 'OOP' },
+      { name: 'SQL', tag: 'Queries' }
     ]
   },
   {
-    id: 'web',
-    title: 'Web Technologies',
+    id: 'mobile-backend',
+    title: 'Mobile & Backend Dev',
     icon: Globe,
     color: 'indigo',
     skills: [
-      { name: 'HTML5', tag: 'Structure' },
-      { name: 'CSS3', tag: 'Styling & Flexbox' },
-      { name: 'JavaScript', tag: 'ES6+' }
+      { name: 'Flutter', tag: 'Cross-Platform' },
+      { name: 'Node.js', tag: 'Runtime' },
+      { name: 'Express.js', tag: 'Framework' }
     ]
   },
   {
     id: 'database',
-    title: 'Database Management',
+    title: 'Databases & Data',
     icon: Database,
     color: 'emerald',
     skills: [
-      { name: 'MySQL', tag: 'Relational DB' },
-      { name: 'MongoDB', tag: 'NoSQL / App Project' }
-    ]
-  },
-  {
-    id: 'datascience',
-    title: 'Python / Data Science Libraries',
-    icon: LineChart,
-    color: 'amber',
-    badge: 'Coursework & Learning Awareness',
-    disclaimer: 'Basic awareness & practical exercises gained through BCA coursework and NPTEL training.',
-    skills: [
-      { name: 'NumPy', tag: 'Array Operations' },
-      { name: 'Pandas', tag: 'Dataframes' },
-      { name: 'Matplotlib', tag: 'Data Visuals' },
-      { name: 'Seaborn', tag: 'Statistical Plots' },
-      { name: 'NLTK', tag: 'Text Intro' },
-      { name: 'scikit-learn', tag: 'Linear Regression' }
+      { name: 'MongoDB', tag: 'NoSQL' },
+      { name: 'MySQL', tag: 'Relational' },
+      { name: 'Power BI', tag: 'Visualization' }
     ]
   },
   {
     id: 'tools',
-    title: 'Development & Tools',
+    title: 'Tools & Platforms',
     icon: Wrench,
     color: 'purple',
     skills: [
-      { name: 'VS Code', tag: 'Primary IDE' },
-      { name: 'PyCharm', tag: 'Python IDE' },
-      { name: 'NetBeans', tag: 'Java IDE' },
-      { name: 'Android Studio', tag: 'Flutter Environment' },
-      { name: 'MS Word', tag: 'Docs' },
-      { name: 'MS Excel', tag: 'Spreadsheets' },
-      { name: 'PowerPoint', tag: 'Presentations' }
+      { name: 'Android Studio', tag: 'IDE' },
+      { name: 'VS Code', tag: 'IDE' },
+      { name: 'Git', tag: 'Version Control' },
+      { name: 'GitHub', tag: 'Repository' }
     ]
   },
   {
-    id: 'softskills',
-    title: 'Professional Soft Skills',
-    icon: Users,
-    color: 'cyan',
+    id: 'concepts',
+    title: 'Core Concepts',
+    icon: Sparkles,
+    color: 'amber',
     skills: [
-      { name: 'Communication', tag: 'Presentation & Paper' },
-      { name: 'Willingness to Learn', tag: 'Continuous Growth' },
-      { name: 'Time Management', tag: 'Task Prioritization' },
-      { name: 'Adaptability', tag: 'Fast Learner' },
-      { name: 'Teamwork', tag: 'NSS & Group Work' },
-      { name: 'Leadership', tag: 'Coding & NSS Events' }
+      { name: 'Object-Oriented Programming', tag: 'OOP' },
+      { name: 'Data Structures', tag: 'DSA' },
+      { name: 'Database Management', tag: 'DBMS' },
+      { name: 'Software Dev Lifecycle', tag: 'SDLC' },
+      { name: 'REST APIs', tag: 'Web' },
+      { name: 'Data Analysis', tag: 'Analytics' }
     ]
   }
 ];
