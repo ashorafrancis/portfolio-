@@ -3,7 +3,7 @@ import { FileText, Eye, Download, ShieldCheck, CheckCircle2, ExternalLink } from
 import './ResumeSection.css';
 
 export default function ResumeSection() {
-  const resumeUrl = '/Ashora_Francis_Resume.pdf';
+  const resumeUrl = '/Ashora_Francis_New_Resume.pdf';
 
   return (
     <section id="resume" className="section-padding resume-section">
@@ -62,7 +62,7 @@ export default function ResumeSection() {
 
                 <a
                   href={resumeUrl}
-                  download="Ashora_Francis_Resume.pdf"
+                  download="Ashora_Francis_New_Resume.pdf"
                   className="btn btn-secondary"
                 >
                   <Download size={18} />

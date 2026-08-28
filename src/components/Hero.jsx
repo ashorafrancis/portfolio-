@@ -51,7 +51,7 @@ export default function Hero() {
             </button>
 
             <a
-              href="/Ashora_Francis_Resume.pdf"
+              href="/Ashora_Francis_New_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-secondary"

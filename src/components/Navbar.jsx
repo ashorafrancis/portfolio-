@@ -83,7 +83,7 @@ export default function Navbar() {
         {/* Action Button */}
         <div className="navbar-actions">
           <a
-            href="/Ashora_Francis_Resume.pdf"
+            href="/Ashora_Francis_New_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="navbar-resume-btn"
