@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle2, MessageSquare, ExternalLink } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, Terminal } from 'lucide-react';
 import LinkedinIcon from './LinkedinIcon';
 import './Contact.css';
 
@@ -23,7 +23,7 @@ export default function Contact() {
     e.preventDefault();
     
     // Construct mailto link with pre-filled subject and body
-    const mailtoSubject = encodeURIComponent(formData.subject || `Portfolio Contact from ${formData.name}`);
+    const mailtoSubject = encodeURIComponent(formData.subject || `Portfolio Inquiry from ${formData.name}`);
     const mailtoBody = encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
     );
@@ -35,7 +35,7 @@ export default function Contact() {
     setTimeout(() => {
       setSubmitted(false);
       setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 5000);
+    }, 6000);
   };
 
   return (
@@ -45,56 +45,56 @@ export default function Contact() {
         {/* Section Header */}
         <div className="section-header">
           <div className="section-badge">
-            <Mail size={15} />
-            <span>Get In Touch</span>
+            <Mail size={14} className="text-red" />
+            <span>/// 08. COMMUNICATION LINK</span>
           </div>
           <h2 className="section-title">
-            Contact <span className="gradient-text">Me</span>
+            Get In <span className="gradient-text">Touch</span>
           </h2>
           <p className="section-subtitle">
-            Seeking technical internships, project collaborations, or entry-level opportunities? Feel free to reach out directly via email, phone, or LinkedIn!
+            Open to technical software internships, full-stack collaborations, and developer opportunities. Connect directly via email, phone, or send a transmission below.
           </p>
         </div>
 
         {/* Main Grid */}
-        <div className="contact-grid">
+        <div className="contact-cockpit-grid">
           
           {/* Left: Contact Info Cards */}
-          <div className="contact-info-col">
+          <div className="contact-cards-col">
             
             {/* Email Card */}
-            <a href="mailto:ashorafrancis@gmail.com" className="glass-card contact-info-card">
-              <div className="info-icon-box icon-skyblue">
-                <Mail size={22} />
+            <a href="mailto:ashorafrancis@gmail.com" className="contact-channel-card">
+              <div className="channel-icon-box">
+                <Mail size={20} />
               </div>
-              <div className="info-text-wrap">
-                <span className="info-label">Email Address</span>
-                <span className="info-value">ashorafrancis@gmail.com</span>
-                <span className="info-action">Click to send email ➔</span>
+              <div className="channel-info">
+                <span className="channel-label">ELECTRONIC MAIL</span>
+                <span className="channel-value">ashorafrancis@gmail.com</span>
+                <span className="channel-sub">Click to initiate direct email ➔</span>
               </div>
             </a>
 
             {/* Phone Card */}
-            <a href="tel:9539748329" className="glass-card contact-info-card">
-              <div className="info-icon-box icon-darkgrey">
-                <Phone size={22} />
+            <a href="tel:9539748329" className="contact-channel-card">
+              <div className="channel-icon-box">
+                <Phone size={20} />
               </div>
-              <div className="info-text-wrap">
-                <span className="info-label">Phone / WhatsApp</span>
-                <span className="info-value">+91 9539748329</span>
-                <span className="info-action">Click to call ➔</span>
+              <div className="channel-info">
+                <span className="channel-label">VOICE & WHATSAPP</span>
+                <span className="channel-value">+91 9539748329</span>
+                <span className="channel-sub">Click to place direct call ➔</span>
               </div>
             </a>
 
             {/* Location Card */}
-            <div className="glass-card contact-info-card">
-              <div className="info-icon-box icon-lightgrey">
-                <MapPin size={22} />
+            <div className="contact-channel-card">
+              <div className="channel-icon-box">
+                <MapPin size={20} />
               </div>
-              <div className="info-text-wrap">
-                <span className="info-label">Location</span>
-                <span className="info-value">Ernakulam, Kerala, India</span>
-                <span className="info-subtext">Open to remote & on-site technical roles</span>
+              <div className="channel-info">
+                <span className="channel-label">GEOGRAPHIC BASE</span>
+                <span className="channel-value">Ernakulam, Kerala, India</span>
+                <span className="channel-sub">Available for Remote & On-Site Roles</span>
               </div>
             </div>
 
@@ -103,101 +103,111 @@ export default function Contact() {
               href="https://www.linkedin.com/in/ashora-francis"
               target="_blank"
               rel="noopener noreferrer"
-              className="glass-card contact-info-card linkedin-card"
+              className="contact-channel-card"
             >
-              <div className="info-icon-box icon-deepblue">
-                <LinkedinIcon size={22} />
+              <div className="channel-icon-box">
+                <LinkedinIcon size={20} />
               </div>
-              <div className="info-text-wrap">
-                <span className="info-label">LinkedIn Profile</span>
-                <span className="info-value">linkedin.com/in/ashora-francis</span>
-                <span className="info-action">Connect on LinkedIn <ExternalLink size={13} /></span>
+              <div className="channel-info">
+                <span className="channel-label">PROFESSIONAL NETWORK</span>
+                <span className="channel-value">linkedin.com/in/ashora-francis</span>
+                <span className="channel-sub">Connect on LinkedIn ➔</span>
               </div>
             </a>
 
           </div>
 
-          {/* Right: Contact Form */}
-          <div className="glass-card contact-form-card">
-            <h3 className="form-card-title">
-              <MessageSquare size={20} className="text-skyblue" />
-              <span>Send Me a Message</span>
-            </h3>
+          {/* Right: Functional Transmission Form */}
+          <div className="contact-form-col">
+            <div className="contact-form-card">
+              {/* Tech corner notches */}
+              <div className="hud-corner hud-corner-tl"></div>
+              <div className="hud-corner hud-corner-tr"></div>
+              <div className="hud-corner hud-corner-bl"></div>
+              <div className="hud-corner hud-corner-br"></div>
 
-            {submitted && (
-              <div className="form-toast-success animate-fade-in">
-                <CheckCircle2 size={20} className="text-darkgrey" />
-                <div>
-                  <strong>Opening your default email client...</strong>
-                  <p>Your message parameters have been prepared. You can review and hit send in your mail client.</p>
+              <div className="form-top-bar">
+                <div className="form-header-title">
+                  <Terminal size={16} className="text-red" />
+                  <span>DIRECT MESSAGE DISPATCH</span>
                 </div>
+                <span className="form-status-tag">STATUS: READY</span>
               </div>
-            )}
 
-            <form onSubmit={handleSubmit} className="contact-form">
-              <div className="form-group-row">
+              {submitted && (
+                <div className="form-success-banner animate-fade-in">
+                  <CheckCircle2 size={18} className="text-red" />
+                  <span>Transmission generated! Opening your mail client...</span>
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit} className="hud-contact-form">
+                
+                <div className="form-row-dual">
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="name">YOUR FULL NAME *</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      placeholder="e.g. Alex Mercer"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="hud-input"
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="email">YOUR EMAIL ADDRESS *</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      placeholder="alex@example.com"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="hud-input"
+                    />
+                  </div>
+                </div>
+
                 <div className="form-group">
-                  <label htmlFor="name" className="form-label">Your Name</label>
+                  <label className="form-label" htmlFor="subject">TRANSMISSION SUBJECT</label>
                   <input
                     type="text"
-                    id="name"
-                    name="name"
-                    required
-                    value={formData.name}
+                    id="subject"
+                    name="subject"
+                    placeholder="e.g. Internship Inquiry / Software Collaboration"
+                    value={formData.subject}
                     onChange={handleChange}
-                    placeholder="e.g. John Doe"
-                    className="form-input"
+                    className="hud-input"
                   />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="email" className="form-label">Your Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
+                  <label className="form-label" htmlFor="message">MESSAGE CONTENTS *</label>
+                  <textarea
+                    id="message"
+                    name="message"
                     required
-                    value={formData.email}
+                    rows={5}
+                    placeholder="Write your inquiry or proposal details here..."
+                    value={formData.message}
                     onChange={handleChange}
-                    placeholder="e.g. john@example.com"
-                    className="form-input"
-                  />
+                    className="hud-input hud-textarea"
+                  ></textarea>
                 </div>
-              </div>
 
-              <div className="form-group">
-                <label htmlFor="subject" className="form-label">Subject</label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  required
-                  value={formData.subject}
-                  onChange={handleChange}
-                  placeholder="e.g. Internship Opportunity / Collaboration"
-                  className="form-input"
-                />
-              </div>
+                <button type="submit" className="btn-dispatch-message">
+                  <span>DISPATCH TRANSMISSION</span>
+                  <Send size={16} />
+                </button>
 
-              <div className="form-group">
-                <label htmlFor="message" className="form-label">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows={5}
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Write your message here..."
-                  className="form-input form-textarea"
-                ></textarea>
-              </div>
+              </form>
 
-              <button type="submit" className="btn btn-primary form-submit-btn">
-                <Send size={18} />
-                <span>Send Message</span>
-              </button>
-            </form>
+            </div>
           </div>
 
         </div>

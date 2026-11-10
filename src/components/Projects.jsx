@@ -1,10 +1,23 @@
 import React, { useState } from 'react';
-import { Briefcase, Star, Layers, ShieldCheck, CheckCircle2, Cpu, BarChart3, Database, Server, Smartphone, Calendar, Bell, ChevronRight, Play, X, Maximize } from 'lucide-react';
+import { Briefcase, Star, CheckCircle2, Server, Database, Smartphone, Play, X, Maximize } from 'lucide-react';
+import { useTilt3D } from '../hooks/useTilt3D';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 import './Projects.css';
+
+function ProjectCard({ children }) {
+  const tiltRef = useTilt3D({ max: 6 });
+  return (
+    <div ref={tiltRef} className="project-card tilt-card">
+      {children}
+    </div>
+  );
+}
 
 export default function Projects() {
   const [activeTab, setActiveTab] = useState('overview'); // 'overview' | 'architecture' | 'features'
   const [modal, setModal] = useState({ isOpen: false, type: '', src: '' });
+  const headerRef = useScrollReveal();
+  const gridRef = useScrollReveal({ threshold: 0.08 });
 
   const openVideo = (src) => setModal({ isOpen: true, type: 'video', src });
   const openImage = (src) => setModal({ isOpen: true, type: 'image', src });
@@ -15,41 +28,48 @@ export default function Projects() {
       <div className="container">
         
         {/* Section Header */}
-        <div className="section-header">
+        <div ref={headerRef} className="section-header reveal-up">
           <div className="section-badge">
-            <Briefcase size={15} />
-            <span>Portfolio Highlights</span>
+            <Briefcase size={14} className="text-red" />
+            <span>/// 04. FEATURED PROJECTS</span>
           </div>
           <h2 className="section-title">
-            Featured <span className="gradient-text">Projects</span>
+            Featured <span className="gradient-text">Software Projects</span>
           </h2>
           <p className="section-subtitle">
-            Practical software applications, mobile systems, and machine learning models developed through hands-on coding and technical problem solving.
+            Engineered cross-platform mobile systems, full-stack REST API backends, and interactive business intelligence dashboards developed through rigorous hands-on problem solving.
           </p>
         </div>
 
-        {/* ---------------------------------------------------- */}
-        {/* FEATURED PROJECT: SMART EXPENSE TRACKER */}
-        {/* ---------------------------------------------------- */}
-        <div className="featured-project-container glass-card">
+        {/* ==================================================== */}
+        {/* 1. MASTER FEATURED PROJECT: SMART EXPENSE TRACKER     */}
+        {/* ==================================================== */}
+        <div className="featured-project-container">
+          {/* Tech Corner Accents */}
+          <div className="hud-corner hud-corner-tl"></div>
+          <div className="hud-corner hud-corner-tr"></div>
+          <div className="hud-corner hud-corner-bl"></div>
+          <div className="hud-corner hud-corner-br"></div>
+
           <div className="featured-badge-top">
-            <Star size={14} className="star-icon" />
-            <span>Featured Project — Full Stack Mobile App</span>
+            <Star size={13} className="star-icon" />
+            <span>FLAGSHIP PROJECT // FULL-STACK MOBILE ARCHITECTURE</span>
           </div>
 
-          <div className="featured-grid" style={{ gridTemplateColumns: '1fr' }}>
+          <div className="featured-layout-grid">
             
-            {/* Left Content */}
-            <div className="featured-info">
+            {/* Info Column */}
+            <div className="featured-info-col">
+              <div className="project-category-row">
+                <span className="cat-chip">CROSS-PLATFORM MOBILE</span>
+                <span className="cat-chip-alt">REST API BACKEND</span>
+              </div>
+
               <h3 className="featured-title">Smart Expense Tracker</h3>
               
               <p className="featured-description">
-                A full-stack expense management application designed to help users record, organize, analyze, and manage their personal finances, recurring expenses, and dues in one place.
+                A full-stack mobile personal finance application engineered to empower users to record, categorize, visualize, and budget expenditures, recurring dues, and calendar timelines with real-time analytics.
               </p>
-
-              <button className="btn-watch-demo" onClick={() => openVideo('/expense-tracker.mp4')}>
-                <Play size={18} fill="currentColor" /> Watch Demo
-              </button>
 
               {/* Technologies Badges */}
               <div className="tech-badge-list">
@@ -63,106 +83,182 @@ export default function Projects() {
                 <span className="tech-pill pill-storage">SharedPreferences</span>
               </div>
 
-              {/* Tab Navigation for Featured Details */}
-              <div className="featured-tabs">
+              {/* Action Buttons: Watch Demo */}
+              <div className="project-action-row">
                 <button
-                  className={`tab-btn ${activeTab === 'overview' ? 'active' : ''}`}
-                  onClick={() => setActiveTab('overview')}
+                  className="btn-watch-demo"
+                  onClick={() => openVideo('/expense-tracker.mp4')}
                 >
-                  Key Highlights
+                  <Play size={16} fill="currentColor" />
+                  <span>WATCH DEMO VIDEO</span>
                 </button>
+
                 <button
-                  className={`tab-btn ${activeTab === 'architecture' ? 'active' : ''}`}
-                  onClick={() => setActiveTab('architecture')}
+                  className="btn-preview-screen"
+                  onClick={() => openImage('/expense-tracker-preview.jpeg')}
                 >
-                  Technical Architecture
-                </button>
-                <button
-                  className={`tab-btn ${activeTab === 'features' ? 'active' : ''}`}
-                  onClick={() => setActiveTab('features')}
-                >
-                  Complete Features
+                  <Maximize size={15} />
+                  <span>INSPECT UI PREVIEW</span>
                 </button>
               </div>
 
-              {/* Dynamic Tab Panel */}
-              <div className="tab-panel-content">
-                {activeTab === 'overview' && (
-                  <div className="overview-panel animate-fade-in">
-                    <ul className="feature-check-list">
-                      <li><CheckCircle2 size={16} className="check-icon" /> Secure user registration, JWT login, and local session persistence via SharedPreferences.</li>
-                      <li><CheckCircle2 size={16} className="check-icon" /> Comprehensive expense categorization, editing, deleting, and due payment tracking.</li>
-                      <li><CheckCircle2 size={16} className="check-icon" /> Interactive analytical charts for spending insights and calendar-based transaction tracking.</li>
-                      <li><CheckCircle2 size={16} className="check-icon" /> Built-in reminders & notification functionality for pending due payments.</li>
-                    </ul>
-                  </div>
-                )}
+              {/* Dynamic Interactive Tabs */}
+              <div className="featured-tabs-container">
+                <div className="featured-tabs-bar">
+                  <button
+                    className={`tab-btn ${activeTab === 'overview' ? 'active' : ''}`}
+                    onClick={() => setActiveTab('overview')}
+                  >
+                    Key Highlights
+                  </button>
+                  <button
+                    className={`tab-btn ${activeTab === 'architecture' ? 'active' : ''}`}
+                    onClick={() => setActiveTab('architecture')}
+                  >
+                    System Architecture
+                  </button>
+                  <button
+                    className={`tab-btn ${activeTab === 'features' ? 'active' : ''}`}
+                    onClick={() => setActiveTab('features')}
+                  >
+                    Complete Features
+                  </button>
+                </div>
 
-                {activeTab === 'architecture' && (
-                  <div className="architecture-panel animate-fade-in">
-                    <div className="arch-flow-grid">
-                      <div className="arch-box">
-                        <Smartphone size={18} className="text-skyblue" />
-                        <span className="arch-box-title">Frontend</span>
-                        <span className="arch-box-desc">Flutter & Dart UI</span>
-                      </div>
-                      <div className="arch-arrow">➔</div>
-                      <div className="arch-box">
-                        <Server size={18} className="text-deepblue" />
-                        <span className="arch-box-title">Backend API</span>
-                        <span className="arch-box-desc">Node.js & Express</span>
-                      </div>
-                      <div className="arch-arrow">➔</div>
-                      <div className="arch-box">
-                        <Database size={18} className="text-darkgrey" />
-                        <span className="arch-box-title">Database</span>
-                        <span className="arch-box-desc">MongoDB Storage</span>
+                <div className="tab-panel-box">
+                  {activeTab === 'overview' && (
+                    <div className="tab-pane animate-fade-in">
+                      <ul className="feature-check-list">
+                        <li>
+                          <CheckCircle2 size={15} className="check-icon" />
+                          <span>Secure user registration with bcrypt password hashing and token-based JWT session security.</span>
+                        </li>
+                        <li>
+                          <CheckCircle2 size={15} className="check-icon" />
+                          <span>Dynamic expense breakdown by category with interactive analytical spending charts and graphs.</span>
+                        </li>
+                        <li>
+                          <CheckCircle2 size={15} className="check-icon" />
+                          <span>Due-payment manager with scheduled notifications and overdue balance alerts.</span>
+                        </li>
+                        <li>
+                          <CheckCircle2 size={15} className="check-icon" />
+                          <span>Persistent offline session state with local cache caching via SharedPreferences.</span>
+                        </li>
+                      </ul>
+                    </div>
+                  )}
+
+                  {activeTab === 'architecture' && (
+                    <div className="tab-pane animate-fade-in">
+                      <div className="arch-flow-grid">
+                        <div className="arch-box">
+                          <Smartphone size={18} className="text-red" />
+                          <span className="arch-box-title">Client Layer</span>
+                          <span className="arch-box-desc">Flutter & Dart UI</span>
+                        </div>
+                        <div className="arch-arrow">➔</div>
+                        <div className="arch-box">
+                          <Server size={18} className="text-red" />
+                          <span className="arch-box-title">API Gateway</span>
+                          <span className="arch-box-desc">Node.js & Express</span>
+                        </div>
+                        <div className="arch-arrow">➔</div>
+                        <div className="arch-box">
+                          <Database size={18} className="text-red" />
+                          <span className="arch-box-title">Database</span>
+                          <span className="arch-box-desc">MongoDB Cluster</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                )}
+                  )}
 
-                {activeTab === 'features' && (
-                  <div className="features-grid-panel animate-fade-in">
-                    <div className="feature-mini-tag"><CheckCircle2 size={13} /> User Auth & Registration</div>
-                    <div className="feature-mini-tag"><CheckCircle2 size={13} /> Add/Edit/Delete Expenses</div>
-                    <div className="feature-mini-tag"><CheckCircle2 size={13} /> Expense Analytics & Visuals</div>
-                    <div className="feature-mini-tag"><CheckCircle2 size={13} /> Due Management & Tracking</div>
-                    <div className="feature-mini-tag"><CheckCircle2 size={13} /> Calendar-Based Tracking</div>
-                    <div className="feature-mini-tag"><CheckCircle2 size={13} /> Notifications & Reminders</div>
-                    <div className="feature-mini-tag"><CheckCircle2 size={13} /> User Profile & Settings</div>
-                    <div className="feature-mini-tag"><CheckCircle2 size={13} /> Persistent Local Sessions</div>
-                  </div>
-                )}
+                  {activeTab === 'features' && (
+                    <div className="tab-pane animate-fade-in">
+                      <div className="features-grid-panel">
+                        <div className="feature-mini-tag"><CheckCircle2 size={13} className="text-red" /> Secure Auth & JWT</div>
+                        <div className="feature-mini-tag"><CheckCircle2 size={13} className="text-red" /> Expense Add / Edit / Delete</div>
+                        <div className="feature-mini-tag"><CheckCircle2 size={13} className="text-red" /> Category Spending Analytics</div>
+                        <div className="feature-mini-tag"><CheckCircle2 size={13} className="text-red" /> Due Payment Tracker</div>
+                        <div className="feature-mini-tag"><CheckCircle2 size={13} className="text-red" /> Calendar Timeline View</div>
+                        <div className="feature-mini-tag"><CheckCircle2 size={13} className="text-red" /> Notification Reminders</div>
+                        <div className="feature-mini-tag"><CheckCircle2 size={13} className="text-red" /> User Profile Management</div>
+                        <div className="feature-mini-tag"><CheckCircle2 size={13} className="text-red" /> Local Session Cache</div>
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
 
+            </div>
+
+            {/* Preview Banner Column */}
+            <div className="featured-preview-col">
+              <div 
+                className="featured-media-card"
+                onClick={() => openVideo('/expense-tracker.mp4')}
+              >
+                <img
+                  src="/expense-tracker-preview.jpeg"
+                  alt="Smart Expense Tracker Preview"
+                  className="preview-img"
+                  onError={(e) => { e.target.style.display = 'none'; }}
+                />
+                <div className="media-play-overlay">
+                  <div className="play-button-glow">
+                    <Play size={24} fill="#ffffff" />
+                  </div>
+                  <span className="play-overlay-text">CLICK TO PLAY APP DEMO</span>
+                </div>
+                <div className="media-status-pill">
+                  <span className="dot-red"></span>
+                  <span>VIDEO WALKTHROUGH</span>
+                </div>
+              </div>
             </div>
 
           </div>
         </div>
 
-        {/* ---------------------------------------------------- */}
-        {/* SECONDARY PROJECTS GRID: TO-DO APP & ML HOUSE PREDICTION */}
-        {/* ---------------------------------------------------- */}
-        <div className="projects-cards-grid">
+        {/* ==================================================== */}
+        {/* 2. SECONDARY PROJECTS GRID: TO-DO APP & FORBES BI    */}
+        {/* ==================================================== */}
+        <div ref={gridRef} className="secondary-projects-grid stagger-children">
           
           {/* PROJECT 2: TO-DO APP */}
-          <div className="glass-card project-card">
-            <div className="card-top-icon icon-skyblue">
-              <Smartphone size={24} />
+          <ProjectCard>
+            <div className="hud-corner hud-corner-tl"></div>
+            <div className="hud-corner hud-corner-br"></div>
+
+            <div className="card-top-icon">
+              <Smartphone size={22} />
             </div>
 
-            <div className="card-content">
-              <span className="project-category-tag">Mobile Application</span>
-              <h3 className="project-card-title">To-Do App</h3>
+            <div className="card-body">
+              <span className="project-category-tag">MOBILE APPLICATION</span>
+              <h3 className="project-card-title">To-Do Task Management App</h3>
               
               <p className="project-card-desc">
-                A mobile task management application developed using Flutter and Dart to help users organize, schedule, and complete their daily tasks efficiently.
+                A clean, responsive mobile task scheduling application developed using Flutter and Dart. Engineered as a core deliverable during the software internship at Teqard Labs.
               </p>
 
-              <button className="btn-watch-demo secondary" onClick={() => openVideo('/todo-app.mp4')}>
-                <Play size={16} fill="currentColor" /> Watch Demo
-              </button>
+              <div className="project-action-row-sm">
+                <button
+                  className="btn-watch-demo sm"
+                  onClick={() => openVideo('/todo-app.mp4')}
+                >
+                  <Play size={14} fill="currentColor" />
+                  <span>WATCH DEMO</span>
+                </button>
+
+                <button
+                  className="btn-preview-screen sm"
+                  onClick={() => openImage('/todo-app-preview.jpeg')}
+                >
+                  <Maximize size={13} />
+                  <span>PREVIEW</span>
+                </button>
+              </div>
 
               <div className="tech-badge-list">
                 <span className="tech-pill pill-flutter">Flutter</span>
@@ -175,77 +271,133 @@ export default function Projects() {
               <div className="project-features-box">
                 <h4 className="box-heading">Key Features:</h4>
                 <ul className="card-feature-list">
-                  <li><CheckCircle2 size={14} className="check-icon" /> Task creation, editing, deletion & status tracking</li>
-                  <li><CheckCircle2 size={14} className="check-icon" /> Clean, responsive mobile user interface</li>
-                  <li><CheckCircle2 size={14} className="check-icon" /> Efficient Flutter state management for app performance</li>
-                  <li><CheckCircle2 size={14} className="check-icon" /> Organized task categorization & status updates</li>
+                  <li><CheckCircle2 size={14} className="check-icon" /> Dynamic task creation, editing, status tracking, and deletion.</li>
+                  <li><CheckCircle2 size={14} className="check-icon" /> Intuitive responsive UI components with clean theme styling.</li>
+                  <li><CheckCircle2 size={14} className="check-icon" /> Optimized Flutter state management for swift rendering.</li>
+                  <li><CheckCircle2 size={14} className="check-icon" /> Real-time categorization and priority classification.</li>
                 </ul>
               </div>
 
+              {/* Project Demonstration Video Preview (Fills empty area with high-end presentation) */}
+              <div 
+                className="todo-video-preview-card"
+                onClick={() => openVideo('/videos/todo-app-demo.mp4')}
+              >
+                <img
+                  src="/todo-app-preview.jpeg"
+                  alt="To-Do App Video Demonstration Preview"
+                  className="todo-preview-img"
+                  onError={(e) => { e.target.style.display = 'none'; }}
+                />
+                <div className="media-play-overlay">
+                  <div className="play-button-glow">
+                    <Play size={22} fill="#ffffff" />
+                  </div>
+                  <span className="play-overlay-text">CLICK TO PLAY TO-DO DEMO</span>
+                </div>
+                <div className="media-status-pill">
+                  <span className="dot-red"></span>
+                  <span>VIDEO DEMONSTRATION</span>
+                </div>
+              </div>
             </div>
-          </div>
+          </ProjectCard>
 
-          {/* PROJECT 4: FORBES DASHBOARD */}
-          <div className="glass-card project-card">
-            <div className="card-top-icon icon-darkgrey">
-              <BarChart3 size={24} />
+          {/* PROJECT 3: FORBES DASHBOARD */}
+          <ProjectCard>
+            <div className="hud-corner hud-corner-tl"></div>
+            <div className="hud-corner hud-corner-br"></div>
+
+            <div className="card-top-icon">
+              <Database size={22} />
             </div>
 
-            <div className="card-content">
-              <span className="project-category-tag">Data Visualization</span>
+            <div className="card-body">
+              <span className="project-category-tag">BUSINESS INTELLIGENCE & ANALYTICS</span>
               <h3 className="project-card-title">Forbes Data Visualization Dashboard</h3>
               
               <p className="project-card-desc">
-                Created an interactive data visualization dashboard using Power BI to analyze the Forbes dataset. The dashboard provides insights into billionaire data, industries, countries, wealth distribution, and other important trends using interactive charts, KPIs, and filters.
+                An interactive business intelligence dashboard created in Power BI to analyze the Forbes global wealth dataset, revealing trends across billionaire industries, countries, and wealth distributions.
               </p>
 
+              <div className="project-action-row-sm">
+                <button
+                  className="btn-watch-demo sm"
+                  onClick={() => openImage('/forbes-dashboard-preview.png')}
+                >
+                  <Maximize size={14} />
+                  <span>VIEW FULL DASHBOARD</span>
+                </button>
+              </div>
+
               <div className="tech-badge-list">
-                <span className="tech-pill">Power BI</span>
-                <span className="tech-pill">Data Visualization</span>
-                <span className="tech-pill">Data Analysis</span>
+                <span className="tech-pill pill-flutter">Power BI</span>
                 <span className="tech-pill">Data Cleaning</span>
+                <span className="tech-pill">Data Modeling</span>
+                <span className="tech-pill">Interactive KPIs</span>
+                <span className="tech-pill">Filters & DAX</span>
               </div>
 
               <div className="project-features-box">
                 <h4 className="box-heading">Key Features:</h4>
                 <ul className="card-feature-list">
-                  <li><CheckCircle2 size={14} className="check-icon" /> Interactive data visualization dashboard for Forbes dataset</li>
-                  <li><CheckCircle2 size={14} className="check-icon" /> Dynamic KPIs and filters for in-depth analysis</li>
-                  <li><CheckCircle2 size={14} className="check-icon" /> Analyzed wealth distribution, industries, and countries</li>
+                  <li><CheckCircle2 size={14} className="check-icon" /> Interactive Power BI charts, slicers, and drill-through cards.</li>
+                  <li><CheckCircle2 size={14} className="check-icon" /> Wealth distribution analysis across global geographic regions.</li>
+                  <li><CheckCircle2 size={14} className="check-icon" /> Industry sector breakdown and billionaire net worth metrics.</li>
                 </ul>
               </div>
 
-              {/* Visual Preview */}
-              <div className="card-visual-preview no-padding clickable" onClick={() => openImage('/forbes-dashboard-preview.png')}>
-                <img src="/forbes-dashboard-preview.png" alt="Forbes Data Visualization Dashboard" className="project-screenshot" />
-                <div className="preview-overlay">
-                  <Maximize size={32} />
+              {/* Visual Preview Screenshot */}
+              <div 
+                className="dashboard-preview-container"
+                onClick={() => openImage('/forbes-dashboard-preview.png')}
+              >
+                <img
+                  src="/forbes-dashboard-preview.png"
+                  alt="Forbes Dashboard Preview"
+                  className="dashboard-img"
+                />
+                <div className="dash-overlay">
+                  <Maximize size={24} />
+                  <span>CLICK TO EXPAND DASHBOARD</span>
                 </div>
               </div>
 
             </div>
-          </div>
+          </ProjectCard>
 
         </div>
 
-        {/* Media Modal */}
+        {/* ==================================================== */}
+        {/* MEDIA MODAL (Video / Image Lightbox)                 */}
+        {/* ==================================================== */}
         {modal.isOpen && (
           <div className="media-modal-overlay" onClick={closeModal}>
-            <div className="media-modal-content" onClick={(e) => e.stopPropagation()}>
-              <button className="modal-close-btn" onClick={closeModal}>
-                <X size={20} />
-              </button>
+            <div className="media-modal-container" onClick={(e) => e.stopPropagation()}>
               
-              {modal.type === 'video' ? (
-                <video 
-                  src={modal.src} 
-                  controls 
-                  className="modal-video"
-                  controlsList="nodownload"
-                />
-              ) : (
-                <img src={modal.src} alt="Preview Modal" className="modal-image" />
-              )}
+              <div className="modal-top-bar">
+                <span className="modal-title-tag">
+                  {modal.type === 'video' ? 'DEMO VIDEO PLAYBACK' : 'SYSTEM ASSET PREVIEW'}
+                </span>
+                <button className="modal-close-btn" onClick={closeModal} aria-label="Close modal">
+                  <X size={20} />
+                </button>
+              </div>
+
+              <div className="modal-body-content">
+                {modal.type === 'video' ? (
+                  <video
+                    src={modal.src}
+                    controls
+                    autoPlay
+                    className="modal-video-elem"
+                    controlsList="nodownload"
+                  />
+                ) : (
+                  <img src={modal.src} alt="Modal Preview" className="modal-image-elem" />
+                )}
+              </div>
+
             </div>
           </div>
         )}

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, FileText, Code2, User, Wrench, Briefcase, Award, Trophy, Mail, Building2 } from 'lucide-react';
+import { Menu, X, FileText, Code2, User, Wrench, Briefcase, Award, Trophy, Mail, Building2, BarChart2 } from 'lucide-react';
 import './Navbar.css';
 
 const navItems = [
   { id: 'home', label: 'Home', icon: Code2 },
   { id: 'about', label: 'About', icon: User },
-  { id: 'internship', label: 'Internship', icon: Building2 },
+  { id: 'stats', label: 'Metrics', icon: BarChart2 },
+  { id: 'internship', label: 'Experience', icon: Building2 },
   { id: 'skills', label: 'Skills', icon: Wrench },
   { id: 'projects', label: 'Projects', icon: Briefcase },
   { id: 'certificates', label: 'Certificates', icon: Award },
@@ -29,7 +30,7 @@ export default function Navbar() {
 
       // Active section highlighting
       const sections = navItems.map(item => document.getElementById(item.id)).filter(Boolean);
-      const scrollPosition = window.scrollY + 120;
+      const scrollPosition = window.scrollY + 140;
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];
@@ -55,12 +56,19 @@ export default function Navbar() {
   return (
     <header className={`navbar-header ${isScrolled ? 'navbar-scrolled' : ''}`}>
       <div className="container navbar-container">
-        {/* Brand Logo */}
+        
+        {/* Brand Logo with Glowing Red Accent */}
         <a href="#home" className="navbar-brand" onClick={(e) => { e.preventDefault(); handleNavClick('home'); }}>
-          <div className="brand-icon">AF</div>
-          <div className="brand-text">
-            <span className="brand-name">Ashora Francis</span>
-            <span className="brand-tag">BCA Developer</span>
+          <div className="brand-icon-box">
+            <span className="brand-initials">AF</span>
+            <div className="brand-glow-corner"></div>
+          </div>
+          <div className="brand-text-col">
+            <span className="brand-name">ASHORA FRANCIS</span>
+            <span className="brand-tag">
+              <span className="brand-status-dot"></span>
+              BCA SCHOLAR & DEVELOPER
+            </span>
           </div>
         </a>
 
@@ -73,23 +81,32 @@ export default function Navbar() {
                   onClick={() => handleNavClick(item.id)}
                   className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
                 >
-                  {item.label}
+                  <span className="nav-link-text">{item.label}</span>
+                  {activeSection === item.id && <span className="nav-active-pip"></span>}
                 </button>
               </li>
             ))}
           </ul>
         </nav>
 
-        {/* Action Button */}
+        {/* Action Button: Glowing Red Pill Button (matches reference) */}
         <div className="navbar-actions">
+          <button
+            onClick={() => handleNavClick('contact')}
+            className="navbar-cta-btn"
+          >
+            <span>GET IN TOUCH</span>
+          </button>
+
           <a
             href="/Ashora_Francis_New_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="navbar-resume-btn"
+            title="Download Official Resume"
           >
-            <FileText size={16} />
-            <span>Resume</span>
+            <FileText size={15} />
+            <span>RESUME</span>
           </a>
 
           {/* Mobile Hamburger Toggle */}
@@ -99,32 +116,48 @@ export default function Navbar() {
             aria-label="Toggle menu"
             aria-expanded={mobileMenuOpen}
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
+
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Drawer Overlay */}
       {mobileMenuOpen && (
-        <div className="mobile-drawer animate-fade-in">
-          <nav aria-label="Mobile Navigation">
-            <ul className="mobile-nav-list">
-              {navItems.map((item) => {
-                const IconComponent = item.icon;
-                return (
-                  <li key={item.id}>
-                    <button
-                      onClick={() => handleNavClick(item.id)}
-                      className={`mobile-nav-link ${activeSection === item.id ? 'active' : ''}`}
-                    >
-                      <IconComponent size={20} className="mobile-icon" />
-                      <span>{item.label}</span>
-                    </button>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
+        <div className="mobile-menu-drawer">
+          <div className="mobile-drawer-header">
+            <span className="drawer-title">SYSTEM NAVIGATION</span>
+            <span className="drawer-sub">SELECT DESTINATION</span>
+          </div>
+          <ul className="mobile-nav-list">
+            {navItems.map((item) => {
+              const IconComp = item.icon;
+              return (
+                <li key={item.id}>
+                  <button
+                    onClick={() => handleNavClick(item.id)}
+                    className={`mobile-nav-link ${activeSection === item.id ? 'active' : ''}`}
+                  >
+                    <IconComp size={18} className="mobile-icon" />
+                    <span>{item.label}</span>
+                    <span className="mobile-arrow">➔</span>
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+
+          <div className="mobile-drawer-footer">
+            <a
+              href="/Ashora_Francis_New_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary mobile-resume-full"
+            >
+              <FileText size={16} />
+              <span>DOWNLOAD RESUME (PDF)</span>
+            </a>
+          </div>
         </div>
       )}
     </header>
