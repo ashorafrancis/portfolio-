@@ -24,12 +24,12 @@ export default function Footer() {
   return (
     <footer className="footer-hud-container">
       <div className="container">
-        
+
         {/* Top Glowing Laser Accent */}
         <div className="footer-glow-line"></div>
 
         <div className="footer-top-grid">
-          
+
           {/* Brand & Meta */}
           <div className="footer-brand-col">
             <div className="footer-brand-head">
@@ -41,7 +41,7 @@ export default function Footer() {
                 <span className="brand-hud-sub">BCA SCHOLAR & DEVELOPER</span>
               </div>
             </div>
-            
+
             <p className="footer-bio-summary">
               Committed to building clean, maintainable software systems across mobile engineering, Python data modeling, and modern cloud database architectures.
             </p>
@@ -72,7 +72,7 @@ export default function Footer() {
             <h4 className="footer-hud-heading">COMMUNICATION HUBS</h4>
             <div className="footer-social-row">
               <a
-                href="mailto:ashorafrancis@gmail.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=ashorafrancis@gmail.com"
                 aria-label="Email Ashora Francis"
                 className="footer-social-btn"
                 title="Send Direct Email"

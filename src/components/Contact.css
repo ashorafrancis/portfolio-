@@ -197,7 +197,67 @@
   min-height: 120px;
 }
 
-/* Deep Crimson Dispatch Button */
+
+/* ---------- Custom layout for new Contact ---------- */
+.contact-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 2rem;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contact-intro {
+  color: #fff;
+  text-align: left;
+  width: 100%;
+  max-width: 600px;
+  margin-right: auto;
+}
+
+.connect-heading {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.6rem;
+  color: #ea4554;
+}
+
+.connect-sub {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-dim);
+}
+
+.contact-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+/* Desktop – two columns for cards and two columns for overall layout */
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 0.5fr 0.5fr;
+  }
+
+  .contact-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Keep original card style but limit width and center */
+.contact-channel-card {
+  width: 100%;
+  max-width: 340px;
+  /* original card width */
+}
+
 .btn-dispatch-message {
   display: inline-flex;
   align-items: center;
