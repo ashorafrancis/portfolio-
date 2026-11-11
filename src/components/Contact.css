@@ -215,6 +215,7 @@
   width: 100%;
   max-width: 600px;
   margin-right: auto;
+  padding-left: 0;
 }
 
 .connect-heading {
@@ -233,7 +234,7 @@
 .contact-cards-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.2rem;
+  gap: 2rem;
   width: 100%;
   max-width: 680px;
   margin: 0 auto;
