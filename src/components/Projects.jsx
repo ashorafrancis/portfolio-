@@ -4,6 +4,7 @@ import { useTilt3D } from '../hooks/useTilt3D';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import './Projects.css';
 
+
 function ProjectCard({ children }) {
   const tiltRef = useTilt3D({ max: 6 });
   return (

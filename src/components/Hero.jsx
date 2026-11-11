@@ -33,12 +33,12 @@ export default function Hero() {
         <div className="hero-hud-topbar">
           <div className="hud-status-chip">
             <span className="hud-pulse-node"></span>
-            <span className="hud-chip-text">SYSTEM STATUS: FULLY OPERATIONAL</span>
+            <span className="hud-chip-text">SYSTEM STATUS: BUILDING & LEARNING</span>
           </div>
           <div className="hud-meta-coords">
             <span>LOC: 9.9816° N, 76.2999° E // ERNAKULAM</span>
             <span className="hud-divider">|</span>
-            <span>INDEX: BCA.DEV.2026</span>
+            <span>IDENTITY: BCA // TECH</span>
           </div>
         </div>
 
@@ -163,21 +163,21 @@ export default function Hero() {
               {/* FLOATING HOLOGRAPHIC TELEMETRY CARDS (Authentic Metrics) */}
 
               {/* Card 1: Academic Metric Node */}
-              <div className="hologram-card holo-card-top animate-float">
+              <div className="hologram-card holo-card-top">
                 <div className="holo-header">
                   <GraduationCap size={16} className="text-red" />
                   <span className="holo-category">ACADEMIC TELEMETRY</span>
                   <span className="holo-live-dot"></span>
                 </div>
                 <div className="holo-metric-val">8.36 <span className="holo-unit">CGPA</span></div>
-                <div className="holo-desc">BCA Scholar • De Paul Institute (MG Univ)</div>
+                <div className="holo-desc">BCA Scholar • De Paul Institute (MG University)</div>
                 <div className="holo-progress-bar">
                   <div className="holo-progress-fill" style={{ width: '83.6%' }}></div>
                 </div>
               </div>
 
               {/* Card 2: Technical Focus Stack */}
-              <div className="hologram-card holo-card-bottom animate-float" >
+              <div className="hologram-card holo-card-bottom" >
                 <div className="holo-header">
                   <Activity size={16} className="text-red" />
                   <span className="holo-category">CORE STACK STATUS</span>
@@ -194,7 +194,7 @@ export default function Hero() {
               </div>
 
               {/* Card 3: Industry Experience Node */}
-              <div className="hologram-card holo-card-side animate-float" >
+              <div className="hologram-card holo-card-side" >
                 <div className="holo-header">
                   <Building size={16} className="text-red" />
                   <span className="holo-category">INDUSTRY TRACK</span>
@@ -209,7 +209,7 @@ export default function Hero() {
 
               {/* Abstract Corner Telemetry Badges */}
               <div className="cyber-coordinate-chip coord-br">
-                <span>SECTOR: 01 // DEV_ONLINE</span>
+                <span>PROFILE: 01 // DEVELOPER</span>
               </div>
 
             </div>

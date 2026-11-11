@@ -1,8 +1,8 @@
 import React from 'react';
 import { Building2, Calendar, ClipboardList, Wrench, Star, CheckCircle2, ArrowRight, ShieldCheck, Terminal, BarChart2 } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
-import { useTilt3D } from '../hooks/useTilt3D';
 import './Internship.css';
+
 
 const responsibilities = [
   'Assisted in the design and development of Android application features, contributing to core functionality and user interface improvements.',
@@ -23,16 +23,16 @@ export default function Internship() {
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const headerRef  = useScrollReveal();
-  const card1Ref   = useScrollReveal({ threshold: 0.08 });
-  const card2Ref   = useScrollReveal({ threshold: 0.08 });
+  const headerRef = useScrollReveal();
+  const card1Ref = useScrollReveal({ threshold: 0.08 });
+  const card2Ref = useScrollReveal({ threshold: 0.08 });
 
   return (
     <section id="internship" className="section-padding internship-section">
       <div className="container">
 
         {/* Section Header */}
-        <div ref={headerRef} className="section-header reveal-up">
+        <div ref={headerRef} className="section-header">
           <div className="section-badge">
             <Building2 size={14} className="text-red" />
             <span>/// 02. INDUSTRY EXPERIENCE</span>
@@ -102,7 +102,7 @@ export default function Internship() {
 
             {/* Sidebar Column: Tools & Special Project */}
             <div className="internship-sidebar-col">
-              
+
               {/* Tools Box */}
               <div className="sidebar-box tools-box">
                 <h4 className="col-heading">

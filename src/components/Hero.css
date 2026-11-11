@@ -532,15 +532,30 @@
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8), 0 0 18px rgba(184, 25, 39, 0.14);
   z-index: 6;
   width: 230px;
-  transition: all 0.3s ease;
-  animation: floatSmooth 4s ease-in-out infinite;
+  animation: hologramFloat 4s ease-in-out infinite;
+  will-change: translate;
+
+  transition: border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Gentle continuous floating movement */
+@keyframes hologramFloat {
+
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -7px;
+  }
 }
 
 
 .hologram-card:hover {
   border-color: rgba(217, 37, 52, 0.6);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.9), 0 0 24px rgba(184, 25, 39, 0.28);
-  transform: translateY(-3px);
 }
 
 .holo-header {
@@ -603,21 +618,24 @@
 
 /* Card Placements */
 .holo-card-top {
-  top: -15px;
-  right: 0px;
+  top: -25px;
+  right: 15px;
+  animation-delay: 0s;
 }
 
 .holo-card-bottom {
   bottom: 20px;
   left: 10px;
   width: 250px;
+  animation-delay: -1.3s;
 }
 
 .holo-card-side {
   top: 45%;
-  right: -30px;
+  right: -45px;
   transform: translateY(-50%);
   width: 220px;
+  animation-delay: -2.6s;
 }
 
 .holo-company {

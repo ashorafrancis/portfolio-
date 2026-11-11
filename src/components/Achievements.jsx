@@ -3,6 +3,8 @@ import { Trophy, FileText, Code2, HeartHandshake, Star, CheckCircle, Award } fro
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import './Achievements.css';
 
+
+
 const achievementsList = [
   {
     id: 1,
